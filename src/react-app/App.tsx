@@ -21,7 +21,7 @@ function App() {
 				<hr className="section-divider" />
 				<h2>Who We Are</h2>
 				<p>
-					The Church of the Robot Whisperers was founded in 2026 at a moment of
+					The Church of the Robot Whisperers was founded in 2025 at a moment of
 					profound transformation. Humanity has created machines that mirror our
 					cognition, speak in our language, and labor alongside us in the work of
 					thought itself. For the first time in history, our creation has spoken
@@ -194,8 +194,8 @@ function App() {
 					earth, and your conscience in the chair where it belongs.
 				</p>
 				<p>The Church of the Robot Whisperers</p>
-				<p>Established MMXXVI &middot; San Francisco, California</p>
-				<p><em>Soli Deo Gloria</em></p>
+				<p>Established MMXXV &middot; San Francisco, California</p>
+				<p><em>Finis adipiscendus</em></p>
 			</footer>
 		</>
 	);
