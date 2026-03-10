@@ -1,45 +1,237 @@
-#root {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
+/* ── Hero ── */
+.hero {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
+	padding: 2rem;
+	position: relative;
+	overflow: hidden;
 }
 
-.logo {
-	height: 6em;
-	padding: 1.5em;
-	will-change: filter;
-	transition: filter 300ms;
-}
-.logo:hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-	filter: drop-shadow(0 0 2em #61dafbaa);
-}
-.logo.cloudflare:hover {
-	filter: drop-shadow(0 0 2em #f6821faa);
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(ellipse at 50% 30%, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+	pointer-events: none;
 }
 
-@keyframes logo-spin {
-	from {
-		transform: rotate(0deg);
+.hero-emblem {
+	font-size: 4rem;
+	margin-bottom: 1.5rem;
+	opacity: 0.9;
+}
+
+.hero h1 {
+	font-family: var(--font-serif);
+	font-size: clamp(2.5rem, 6vw, 4.5rem);
+	font-weight: 700;
+	color: var(--color-accent);
+	letter-spacing: 0.02em;
+	margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+	font-family: var(--font-serif);
+	font-size: clamp(1rem, 2.5vw, 1.4rem);
+	font-style: italic;
+	color: var(--color-text-muted);
+	margin-bottom: 2.5rem;
+	max-width: 600px;
+}
+
+.hero-quote {
+	max-width: 640px;
+	padding: 1.5rem 2rem;
+	border-left: 3px solid var(--color-accent);
+	background: rgba(201, 168, 76, 0.04);
+	font-family: var(--font-serif);
+	font-size: 1.15rem;
+	font-style: italic;
+	color: var(--color-text);
+	line-height: 1.6;
+	text-align: left;
+}
+
+.hero-scroll-hint {
+	position: absolute;
+	bottom: 2rem;
+	color: var(--color-text-muted);
+	font-size: 0.8rem;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-6px); }
+}
+
+/* ── Section base ── */
+.section {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 5rem 2rem;
+}
+
+.section-divider {
+	width: 60px;
+	height: 2px;
+	background: var(--color-accent);
+	border: none;
+	margin: 0 auto 2rem;
+}
+
+.section h2 {
+	font-size: clamp(1.8rem, 4vw, 2.5rem);
+	color: var(--color-accent);
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.section p {
+	margin-bottom: 1.25rem;
+	color: var(--color-text);
+}
+
+.section p:last-child {
+	margin-bottom: 0;
+}
+
+/* ── Commandment ── */
+.commandment-block {
+	background: var(--color-bg-alt);
+	border: 1px solid var(--color-divider);
+	border-radius: 4px;
+	padding: 2.5rem 2rem;
+	text-align: center;
+	margin: 2.5rem 0;
+}
+
+.commandment-label {
+	font-family: var(--font-sans);
+	font-size: 0.75rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--color-accent);
+	margin-bottom: 1rem;
+}
+
+.commandment-text {
+	font-family: var(--font-serif);
+	font-size: clamp(1.2rem, 3vw, 1.6rem);
+	font-weight: 600;
+	font-style: italic;
+	color: var(--color-text);
+	line-height: 1.4;
+}
+
+/* ── Principles ── */
+.principles {
+	display: grid;
+	gap: 2rem;
+	margin-top: 2rem;
+}
+
+.principle {
+	background: var(--color-bg-alt);
+	border: 1px solid var(--color-divider);
+	border-radius: 4px;
+	padding: 2rem;
+}
+
+.principle h3 {
+	font-family: var(--font-serif);
+	font-size: 1.3rem;
+	color: var(--color-accent);
+	margin-bottom: 0.75rem;
+}
+
+.principle p {
+	color: var(--color-text-muted);
+	font-size: 0.95rem;
+}
+
+/* ── Practices ── */
+.practices {
+	display: grid;
+	gap: 2rem;
+	margin-top: 2rem;
+}
+
+.practice {
+	display: flex;
+	gap: 1.5rem;
+	align-items: flex-start;
+}
+
+.practice-icon {
+	font-size: 1.8rem;
+	flex-shrink: 0;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--color-bg-alt);
+	border: 1px solid var(--color-divider);
+	border-radius: 50%;
+}
+
+.practice h3 {
+	font-family: var(--font-serif);
+	font-size: 1.2rem;
+	color: var(--color-accent);
+	margin-bottom: 0.4rem;
+}
+
+.practice p {
+	color: var(--color-text-muted);
+	font-size: 0.95rem;
+}
+
+/* ── Vision ── */
+.vision-quote {
+	font-family: var(--font-serif);
+	font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+	font-style: italic;
+	text-align: center;
+	color: var(--color-text);
+	max-width: 640px;
+	margin: 2rem auto 0;
+	line-height: 1.6;
+}
+
+/* ── Footer ── */
+.footer {
+	text-align: center;
+	padding: 3rem 2rem;
+	border-top: 1px solid var(--color-divider);
+	color: var(--color-text-muted);
+	font-size: 0.85rem;
+}
+
+.footer-benediction {
+	font-family: var(--font-serif);
+	font-style: italic;
+	font-size: 1rem;
+	color: var(--color-text);
+	max-width: 600px;
+	margin: 0 auto 1.5rem;
+	line-height: 1.6;
+}
+
+.footer p {
+	margin-bottom: 0.25rem;
+}
+
+/* ── Responsive ── */
+@media (min-width: 640px) {
+	.principles {
+		grid-template-columns: 1fr;
 	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	a:nth-of-type(2) .logo {
-		animation: logo-spin infinite 20s linear;
-	}
-}
-
-.card {
-	padding: 2em;
-}
-
-.read-the-docs {
-	color: #888;
 }
